@@ -23,6 +23,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build project
+        run: yarn build
+
+      - name: Debug build output
+        run: ls -la ./build
+
       - name: Deploy React to GitHub Pages
         uses: bitovi/github-actions-react-to-github-pages@v1.2.4
         with:
